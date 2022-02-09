@@ -16,9 +16,9 @@ private MessageConstants(){}
 	public static final String OAUTHTC ="deelchat";
 	public static final String OAUTH ="oauth/token";
 
-	public static final String PLIVOAUTHID ="MANDHLMZHLZDVKMZI1MM";
-	public static final String PLIVOAUTHTOKEN ="NWYyOTgyZWY3NWI4MTM1MTRlZjFlNTc2NmU4MTg5";
-	public static final String FCMSERVERAPIKEY = "AAAAgVrXYj0:APA91bGmwNGR4qMVwkMPrjA_TBD34zxoeXal-o4TOIVq57tTME42WFvPf3pxeL6cZXX1nET397OxDDvP5Tfk72gJc1K7jHF0_UXb4Ks_zhjUZ19nxIYjJihP6ZUddkf00TpTrOhSlbM1";
+	public static final String PLIVOAUTHID ="";
+	public static final String PLIVOAUTHTOKEN ="";
+	public static final String FCMSERVERAPIKEY = "";
 	public static final String FCMURL = "https://fcm.googleapis.com/fcm/send";
 	public static final String PULLSUCCESS = "PULLSUCCESS";
 	public static final String PULLFAILURE ="PULLFAILURE";
@@ -33,16 +33,16 @@ private MessageConstants(){}
 	public static final String REMAINING = "remaining";	
 	public static final String DEFAULTRULES = "defaultRules";
 	
-	public static final String TWITTERCONSUMERKEY ="G0tSI0RvejpVSAR3dIT7o0LlG";
-	public static final String TWITTERCONSUMERSECRET ="IwD8GjbQjBLeneTmJ2UtU3xQsJ9nr6I9iX8fMft7bZx2wVHoSE";
+	public static final String TWITTERCONSUMERKEY ="";
+	public static final String TWITTERCONSUMERSECRET ="";
 	public static final String TWITTERFRIENDLISTAPI = "/friends/list";
 	
-	public static final String FACEBOOKIOSAPPID ="209633976469044";
-	public static final String FACEBOOKIOSSECRETKEY ="c1c0459fca7a2e54375d138d9bfa31a6";
+	public static final String FACEBOOKIOSAPPID ="";
+	public static final String FACEBOOKIOSSECRETKEY ="";
 	
-	public static final String FACEBOOKANDROIDAPPID ="234601487097596";
-	public static final String FACEBOOKANDROIDSECRETKEY ="adb2be8b404b483ece6a7534f8b2a725";
+	public static final String FACEBOOKANDROIDAPPID ="";
+	public static final String FACEBOOKANDROIDSECRETKEY ="";
 	
-	public static final String GOOGLEFEEDCONTACTURL ="https://www.google.com/m8/feeds/contacts/default/full";
-	public static final String GOOGLEAPPLICATIONNAME ="Mule-GoogleContactsConnector/1.0";
+	public static final String GOOGLEFEEDCONTACTURL ="";
+	public static final String GOOGLEAPPLICATIONNAME ="";
 }
