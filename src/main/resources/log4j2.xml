@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+		</Property>
+		<Property name="LOG_PATH">E:/logs/appLogs</Property>
+				<!-- <Property name="LOG_PATH">/usr/local/tomcat8_1/webapps/soc-logs/</Property> -->
+	<!-- 	<Property name="LOG_PATH">/usr/local/apache-tomcat-8.5.15/webapps/soc-logs/</Property> -->
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+		<RollingFile name="FileAppender" fileName="${LOG_PATH}/AUDIT.log"
+			filePattern="${LOG_PATH}/Archived/AUDIT-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Filters>
+				<!-- It prevents error -->
+				<ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+				<!-- It prevents debug -->
+				<!-- <ThresholdFilter level="debug" onMatch="DENY" onMismatch="NEUTRAL" /> -->
+				It allows all levels except debug/trace 
+				<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+			<Policies>
+				<!--When the file reaches 5MB it will automatically roll over and forms 
+					a new file -->
+				<SizeBasedTriggeringPolicy size="5MB" />
+			</Policies>
+			<!--When the index reaches 10 it will automatically roll over and forms 
+				a new file -->
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+		<RollingFile name="ErrorFile" fileName="${LOG_PATH}/ERROR.log"
+			filePattern="${LOG_PATH}/Archived/ERROR-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<!--When the file reaches 5MB it will automatically roll over and forms 
+					a new file -->
+				<SizeBasedTriggeringPolicy size="5MB" />
+			</Policies>
+			<!--It allows to create 10 roll over files in minimum time period mentioned in roll over stratergy -->
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="ConsoleAppender" level="info" />
+			<AppenderRef ref="FileAppender" level="trace" />
+			<AppenderRef ref="ErrorFile" level="error" />
+		</Root>
+	</Loggers>
+</Configuration>
